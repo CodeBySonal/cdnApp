@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone@7.18.13/babel.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="main_container"></div>
+    <script type="text/babel">
+        const Header = () => {
+            return (
+                <div>
+                    <h1>Welcome to Health and Fitness</h1>
+                    <p>This is FitnessExcercise</p>
+                </div>
+            )
+        }
+
+        const Card = (props) => {
+            return (
+                <div>
+                    <h1>This is a Zumba class</h1>
+                    <p>Conducting {props.name} at {props.place}</p>
+                </div>
+            )
+        }
+
+        const Section = (props) => {
+            return (
+                <div>
+                    <p>This is the fitness club</p>
+                    {props.children}
+                </div>
+            )
+        }
+        //    ReactDOM.render(<Header/>,document.getElementById("main_container"));
+        // ReactDOM.render(<Card name="Kavitha" place="Bangalore"/>,document.getElementById("main_container"));
+
+        ReactDOM.render(<Section>
+            <Header />
+            <Card name="Yoga" place="zeus" />
+            <Card name="zumba" place="zeus" />
+        </Section>, document.getElementById("main_container"));
+    </script>
+</body>
+
+</html>
